@@ -5,7 +5,7 @@ const fs = require('fs')
 const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
-    require('http').createServer(app).listen(config.port, () => {
+    app.listen(config.port, () => {
         consoleLog.success(`${config.host}:${config.port}`)
         consoleLog.success(`Http服务已启动`)
     });

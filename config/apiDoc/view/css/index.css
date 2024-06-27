@@ -1,0 +1,169 @@
+.sidebar {
+    width: 300px;
+    color: #ececec;
+    background-color: #171717;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar>div {
+    width: 100%;
+}
+
+.sideHead {
+    text-align: center;
+    padding: 12px 0 4px;
+    font-size: 24px;
+    font-weight: bold;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.sideDescription {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+.sideList {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 8px 6px;
+    box-sizing: border-box;
+}
+
+.sideItem {
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sideItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sideItemHead {
+    display: flex;
+    align-items: center;
+}
+
+.sideItemTitle {
+    flex: 1;
+}
+
+.sideItemRightIcon {
+    margin-left: 6px;
+    font-size: 20px;
+    transition: all 0.2s;
+
+}
+
+.sideItemList {
+    box-sizing: border-box;
+    font-size: 18px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.listShow {
+    padding: 6px 0 6px 26px;
+    height: auto;
+    overflow: unset;
+}
+
+.listItem {
+    padding: 6px 6px;
+    border-radius: 6px;
+}
+
+.listItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main {
+    flex: 1;
+    color: #9B9B9B;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.main>div {
+    width: 100%;
+}
+
+.mainHead {
+    padding: 10px 14px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.mainHeadTitle {
+    font-size: 24px;
+}
+
+.titleRight {
+    width: 0;
+    flex: 1;
+    margin-left: 12px;
+    text-align: right;
+    font-size: 20px;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 8px 14px;
+    box-sizing: border-box;
+    display: none;
+    overflow-y: scroll;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.codeArea {
+    background-color: #171717;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+.codeAreaTitle {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.codeAreaContent {
+    margin-top: 12px;
+}
+
+.codeAreaText {
+    padding-left: 2ch;
+}
+
+.homeContent {
+    flex: 1;
+    padding: 8px 14px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeTitle {
+    font-size: 30px;
+}

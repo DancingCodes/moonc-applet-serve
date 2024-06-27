@@ -1,0 +1,36 @@
+body {
+    margin: unset;
+    height: 100vh;
+    display: flex;
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url('/apiDoc/font/test.ttf');
+}
+
+* {
+    font-family: "myFont";
+}
+
+/* 反转 */
+.reverse {
+    transform: rotate(180deg);
+}
+
+/* 单行显示,多余显示省略号 */
+.singleLine {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 关闭滚动条 */
+.noScrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.noScrollbar::-webkit-scrollbar {
+    display: none;
+}

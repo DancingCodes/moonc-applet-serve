@@ -25,7 +25,7 @@ async function image(req, res) {
             }
         }),
         fileFilter: (req, file, cb) => {
-            if (/jpeg|jpg|png/.test(file.mimetype)) {
+            if (file.mimetype.startsWith('image/')) {
                 return cb(null, true);
             } else {
                 cb(true, false);

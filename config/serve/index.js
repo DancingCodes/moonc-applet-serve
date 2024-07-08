@@ -16,8 +16,8 @@ if (process.env.NODE_ENV === 'development') {
     });
 } else {
     require('https').createServer({
-        key: fs.readFileSync(path.join(process.cwd(), 'network', 'ssl', 'key.key')),
-        cert: fs.readFileSync(path.join(process.cwd(), 'network', 'ssl', 'crt.crt'))
+        key: fs.readFileSync(path.join(process.cwd(), 'config', 'ssl', 'key.key')),
+        cert: fs.readFileSync(path.join(process.cwd(), 'config', 'ssl', 'crt.crt'))
     }, app).listen(network.port, () => {
         consoleLog.success(`${network.host}:${network.port}`)
         consoleLog.success(`Https服务已启动`)

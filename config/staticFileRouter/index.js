@@ -11,3 +11,5 @@ app.use('/apiDoc', express.static(path.join(process.cwd(), 'config', 'apiDoc', '
 const uploadImageFilePath = path.join(process.cwd(), 'public', 'upload', 'images');
 fs.mkdirSync(uploadImageFilePath, { recursive: true });
 app.use('/uploadImage', express.static(uploadImageFilePath));
+
+module.exports = uploadImageFilePath;

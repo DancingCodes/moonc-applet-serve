@@ -4,6 +4,7 @@ const path = require('path');
 const { v4 } = require('uuid');
 const multer = require("multer");
 const network = require('@/config/serve')
+const uploadImageFilePath = require('@/config/staticFileRouter')
 
 /**
  * @Api(image)
@@ -15,7 +16,7 @@ async function image(req, res) {
     const uploadImage = multer({
         storage: multer.diskStorage({
             destination: (req, file, cb) => {
-                cb(null, path.join(process.cwd(), 'public', 'upload', 'images'));
+                cb(null, uploadImageFilePath);
             },
             filename: async (req, file, cb) => {
                 const suffix = file.originalname.substring(file.originalname.lastIndexOf("."));

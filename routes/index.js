@@ -6,4 +6,3 @@ app.use(bodyParser.json());
 
 app.use('/user', require('@/routes/user'));
 app.use('/uploadFile', require('@/routes/uploadFile'));
-app.use('/driftBottle', require('@/routes/driftBottle'));

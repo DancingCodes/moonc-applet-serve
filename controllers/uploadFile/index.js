@@ -3,7 +3,7 @@ const response = require('@/utils/response')
 const path = require('path');
 const { v4 } = require('uuid');
 const multer = require("multer");
-const config = require('@/config')
+const network = require('@/config/serve')
 
 /**
  * @Api(image)
@@ -25,8 +25,9 @@ async function image(req, res) {
             }
         }),
         fileFilter: (req, file, cb) => {
+            console.log(file.mimetype);
             if (file.mimetype.startsWith('image/')) {
-                return cb(null, true);
+                cb(null, true);
             } else {
                 cb(true, false);
             }
@@ -40,7 +41,7 @@ async function image(req, res) {
         }
         await uploadFileService.createFile(req.fileName)
         res.send(response.success({
-            imageUrl: `${config.host}:${config.port}/uploadImage/${req.fileName}`
+            imageUrl: `${network.host}:${network.port}/uploadImage/${req.fileName}`
         }));
     });
 }

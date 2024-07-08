@@ -1,6 +1,11 @@
-const config = {
-    port: 3001,
-    host: process.env.NODE_ENV === 'development' ? 'http://127.0.0.1' : "https://appletapi.moonc.love",
-};
+// 数据库
+require('@/config/database');
 
-module.exports = config;
+// 开启Jwt
+require('@/config/jwt')
+
+// 服务
+require('@/config/serve')
+
+// 静态资源
+require('@/config/staticFileRouter');

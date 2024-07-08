@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const config = require('@/config')
+const network = require('@/config/serve')
 
 const apiDoc = {
     title: '小程序接口文档',
     description: 'Moonc Applet Service Docs',
-    serve: `${config.host}:${config.port}`,
+    serve: `${network.host}:${network.port}`,
     version: '1.0.0',
     routeList: [],
 }

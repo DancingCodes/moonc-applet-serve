@@ -1,8 +1,5 @@
 const app = require('@/app');
 
-// 开启Jwt
-require('@/config/jwt')
-
 // 格式化body
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());

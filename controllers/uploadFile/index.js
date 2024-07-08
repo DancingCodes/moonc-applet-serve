@@ -6,12 +6,6 @@ const multer = require("multer");
 const network = require('@/config/serve')
 const uploadImageFilePath = require('@/config/staticFileRouter')
 
-/**
- * @Api(image)
- * @ApiDesc(上传文件)
- * @Request(*File: File)
- * @Responses(token: String)
- */
 async function image(req, res) {
     const uploadImage = multer({
         storage: multer.diskStorage({

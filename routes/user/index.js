@@ -8,5 +8,4 @@ router.get('/info', userController.info);
 
 router.post('/updata', userController.updata);
 
-
 module.exports = router;

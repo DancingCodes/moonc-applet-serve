@@ -5,12 +5,6 @@ const axios = require('axios');
 const jwt = require('jsonwebtoken');
 const jwtKey = require('@/config/jwt')
 
-/**
- * @Api(login)
- * @ApiDesc(用户登录)
- * @Request(*code: String)
- * @Responses(token: String)
- */
 async function login(req, res) {
     const appId = 'wx43d4a5ecfe40a76a'
     const appSecret = 'c3cfacc43c96c7058309463bddeae188'
@@ -30,19 +24,11 @@ async function login(req, res) {
     }));
 }
 
-/**
- * @Api(info)
- * @ApiDesc(用户信息)
- */
 async function info(req, res) {
     const user = await userService.getUser(req.auth.openid);
     res.send(response.success(user));
 }
 
-/**
- * @Api(updata)
- * @ApiDesc(更新用户信息)
- */
 async function updata(req, res) {
     const { name, picture } = req.body
     await userService.updataUser(req.auth.openid, { name, picture });

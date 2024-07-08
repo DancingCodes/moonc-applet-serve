@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const app = require('@/app')
 const network = require('@/config/serve')
+
+app.get('/apiDoc/getData', (req, res) => {
+    res.send(apiDoc)
+})
 
 const apiDoc = {
     title: '小程序接口文档',
@@ -82,17 +87,3 @@ function setDocForControllers(fileName) {
     })
 
 }
-
-
-function setApiRoute(app) {
-    // 文档数据
-    app.get('/apiDoc/getData', (req, res) => {
-        res.send(apiDoc)
-    })
-}
-
-
-module.exports = {
-    setDocForRoutes,
-    setApiRoute
-};

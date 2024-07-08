@@ -4,7 +4,9 @@ const app = require('@/app');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-
-app.use('/driftBottle', require('@/routes/driftBottle'));
+// @RouteName(文件)
 app.use('/uploadFile', require('@/routes/uploadFile'));
+// @RouteName(用户)
 app.use('/user', require('@/routes/user'));
+// @RouteName(漂流瓶)
+app.use('/driftBottle', require('@/routes/driftBottle'));

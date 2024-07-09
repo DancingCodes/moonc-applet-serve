@@ -6,6 +6,12 @@ async function create(req, res) {
     res.send(response.success());
 }
 
+async function getList(req, res) {
+    const { pageNo, pageSize } = req.body
+    res.send(response.success(await memoService.getMemoList(req.auth.openid, pageNo, pageSize)));
+}
+
 module.exports = {
     create,
+    getList
 };

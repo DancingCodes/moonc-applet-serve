@@ -8,6 +8,10 @@ const memoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    status: {
+        type: String,
+        default: '0'
+    },
     content: {
         type: String,
         required: true

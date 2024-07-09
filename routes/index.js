@@ -6,3 +6,4 @@ app.use(bodyParser.json());
 
 app.use('/user', require('@/routes/user'));
 app.use('/uploadFile', require('@/routes/uploadFile'));
+app.use('/memo', require('@/routes/memo'));

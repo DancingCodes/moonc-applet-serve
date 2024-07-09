@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 module.exports = app;
 
-require('module-alias').addAlias('@', process.cwd());
+require('module-alias/register')
 
-require('@/config');
+require('@/config')(app);
 
 require('@/routes');

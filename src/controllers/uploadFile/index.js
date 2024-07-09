@@ -3,14 +3,14 @@ const response = require('@/utils/response')
 const path = require('path');
 const { v4 } = require('uuid');
 const multer = require("multer");
-const network = require('@/config/serve')
-const uploadImageFilePath = require('@/config/staticFileRouter')
+const { network } = require('@/config/serve')
+const { uploadImagePath } = require('@/config/staticRoute')
 
 async function image(req, res) {
     const uploadImage = multer({
         storage: multer.diskStorage({
             destination: (req, file, cb) => {
-                cb(null, uploadImageFilePath);
+                cb(null, uploadImagePath);
             },
             filename: async (req, file, cb) => {
                 const suffix = file.originalname.substring(file.originalname.lastIndexOf("."));
@@ -36,7 +36,7 @@ async function image(req, res) {
         }
         await uploadFileService.createFile(req.fileName)
         res.send(response.success({
-            imageUrl: `${network.host}:${network.port}/uploadImage/${req.fileName}`
+            imageUrl: `${network}/uploadImage/${req.fileName}`
         }));
     });
 }

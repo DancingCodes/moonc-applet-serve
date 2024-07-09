@@ -3,7 +3,7 @@ const response = require('@/utils/response')
 
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
-const jwtKey = require('@/config/jwt')
+const { jwtKey } = require('@/config/jwt')
 
 async function login(req, res) {
     const appId = 'wx43d4a5ecfe40a76a'

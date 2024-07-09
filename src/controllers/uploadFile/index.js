@@ -3,7 +3,7 @@ const response = require('@/utils/response')
 const { v4 } = require('uuid');
 const multer = require("multer");
 const { network } = require('@/config/serve')
-const { uploadImagePath } = require('@/config/staticRoute')
+const { uploadImagePath } = require('@/middlewares/static')
 
 async function image(req, res) {
     const uploadImage = multer({

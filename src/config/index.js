@@ -4,7 +4,4 @@ module.exports = (app) => {
 
     // 服务
     require('@/config/serve')(app)
-
-    // 静态资源
-    require('@/config/staticRoute')(app)
 }

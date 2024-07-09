@@ -1,6 +1,5 @@
 const uploadFileService = require('@/services/uploadFile')
 const response = require('@/utils/response')
-const path = require('path');
 const { v4 } = require('uuid');
 const multer = require("multer");
 const { network } = require('@/config/serve')

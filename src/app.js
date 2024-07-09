@@ -6,4 +6,6 @@ require('module-alias/register')
 
 require('@/config')(app);
 
-require('@/routes');
+require('@/middlewares')(app)
+
+require('@/routes')(app);

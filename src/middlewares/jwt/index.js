@@ -2,9 +2,8 @@ const { expressjwt } = require('express-jwt');
 const response = require('@/utils/response')
 
 const jwtKey = 'moonc';
-exports.jwtKey
 
-module.exports = (app) => {
+const init = (app) => {
     app.use(expressjwt({ secret: jwtKey, algorithms: ['HS256'] }))
 
     app.use((err, req, res, next) => {
@@ -33,4 +32,8 @@ module.exports = (app) => {
         })
     })
 
+}
+module.exports = {
+    jwtKey,
+    init
 }

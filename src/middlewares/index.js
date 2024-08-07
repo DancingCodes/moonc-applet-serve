@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    require('@/middlewares/jwt')(app)
+    require('@/middlewares/jwt').init(app)
 
-    require('@/middlewares/static')(app)
+    require('@/middlewares/static').init(app)
 }

@@ -2,8 +2,7 @@ const uploadFileService = require('@/services/uploadFile')
 const response = require('@/utils/response')
 const { v4 } = require('uuid');
 const multer = require("multer");
-const { network } = require('@/config/serve')
-const { uploadImagePath } = require('@/middlewares/static')
+const { uploadImagePath, requestImagePath } = require('@/middlewares/static')
 
 async function image(req, res) {
     const uploadImage = multer({
@@ -33,9 +32,9 @@ async function image(req, res) {
             res.send(response.error('仅支持图片格式'));
             return
         }
-        await uploadFileService.createFile(req.fileName)
+        await uploadFileService.createFile(`${requestImagePath}/${req.fileName}`)
         res.send(response.success({
-            imageUrl: `${network}/uploadImage/${req.fileName}`
+            imageUrl: `${requestImagePath}/${req.fileName}`
         }));
     });
 }

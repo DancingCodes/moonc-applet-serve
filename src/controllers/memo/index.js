@@ -1,17 +1,25 @@
 const memoService = require('@/services/memo')
 const response = require('@/utils/response')
 
-async function create(req, res) {
-    await memoService.createMemoItem(req.auth.openid, req.body.content)
+async function createMemo(req, res) {
+    const { content, reminderTime } = req.body
+    await memoService.createMemo(req.auth.openid, content, reminderTime)
     res.send(response.success());
 }
 
-async function getList(req, res) {
+async function getMemo(req, res) {
+    const { id } = req.body
+    const memo = await memoService.getMemo(id);
+    res.send(response.success(memo));
+}
+
+async function getMemoList(req, res) {
     const { pageNo, pageSize } = req.body
     res.send(response.success(await memoService.getMemoList(req.auth.openid, pageNo, pageSize)));
 }
 
 module.exports = {
-    create,
-    getList
+    createMemo,
+    getMemo,
+    getMemoList
 };

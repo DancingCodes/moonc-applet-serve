@@ -16,6 +16,10 @@ const memoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    reminderTime: {
+        type: String,
+        required: true
+    },
     createTime: {
         type: String,
         default: () => dayjs().format('YYYY-MM-DD HH:mm:ss')

@@ -1,6 +1,8 @@
 const Memo = require('@/models/memo')
 
-const createMemoItem = async (userId, content) => await new Memo({ userId, content }).save()
+const createMemo = async (userId, content, reminderTime) => await new Memo({ userId, content, reminderTime }).save()
+
+const getMemo = async (id) => await Memo.findOne({ id }).select('-_id -__v')
 
 const getMemoList = async (userId, pageNo, pageSize) => {
     const list = await Memo.find({ userId }).select('-_id -__v').skip((pageNo - 1) * pageSize).limit(pageSize);
@@ -12,6 +14,7 @@ const getMemoList = async (userId, pageNo, pageSize) => {
 }
 
 module.exports = {
-    createMemoItem,
+    createMemo,
+    getMemo,
     getMemoList
 };
